@@ -1289,3 +1289,7 @@ aside {
   color: var(--maroon);
   background: var(--yellow);
 }
+
+a:visited {
+ color: #880188;
+}
