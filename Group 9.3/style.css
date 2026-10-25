@@ -1,35 +1,63 @@
- #loader { 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-  background-color: #ffffff; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  z-index: 9999; 
-  opacity: 1; 
-  transition: opacity 0.5s ease; 
-} 
-.spinner { 
- width: 50px;
- height: 50px; 
- border: 5px solid #e2e8f0; 
- border-top: 5px solid #800000; 
- border-radius: 50%; 
- animation: spin 1s linear infinite; 
- margin-bottom: 15px; 
-} 
+ /* APS LOADING SCREEN */
+#loader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    z-index: 99999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
 
-@keyframes spin {
-  from { 
-    transform: rotate(0deg); 
-  } 
-  to { transform: rotate(360deg); 
-  } 
-} 
+/* SPINNER WITH TRANSPARENT CIRCLE*/
+#loader .spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #fff0f1;
+    border-top: #edcbcb;
+    border-radius: 50%;
+    animation: aps-spin 0.8s linear infinite;
+}
+
+/* SPINNER ANIMATION */
+@keyframes aps-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* LOADING TEXT */
+#loader p {
+    color: #800000;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* HIDE LOADER AFTER LOADING */
+#loader.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    #loader .spinner {
+        animation-duration: 2s;
+    }
+}
+
 
 :root {
   --maroon: #360610;
