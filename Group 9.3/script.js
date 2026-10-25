@@ -237,13 +237,19 @@ window.addEventListener("DOMContentLoaded", () => {
         element.textContent = new Date().getFullYear();
     });
     
+   window.addEventListener("load", function () {
     const loader = document.getElementById("loader");
 
-    if (loader) {
-            loader.hidden = true;
-            loader.setAttribute("aria-hidden","true");
-    }
+    if (!loader) return;
+       
+    setTimeout(function () {
+        loader.classList.add("loader-hidden");
 
+        setTimeout(function () {
+            loader.hidden = true;
+        }, 500);
+    }, 700);
+});
     const startQuizButton = document.getElementById("start-quiz");
     if (startQuizButton) startQuizButton.addEventListener("click", startQuiz);
 
