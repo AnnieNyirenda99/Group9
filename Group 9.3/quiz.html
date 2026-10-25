@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Test your knowledge with subject quizzes for primary school learners.">
+  <title>Knowledge Quiz | Annorattah Private Schools</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Main Page Content -->
+  <main>
+
+  <!-- Website Header -->
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <span class="logo-box">APS</span>
+      <span>Annorattah Private Schools</span>
+    </a>
+
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navbar">
+        ☰ Menu
+    </button>
+
+    <nav id="navbar" class="navbar" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+          Learning <span>▾</span>
+        </button>
+
+        <div class="dropdown-menu">
+          <a href="mathematics.html">Mathematics</a>
+          <a href="science.html">Science</a>
+          <a href="english.html">English</a>
+          <a href="social.html">Social Studies</a>
+          <a href="quiz.html">Quiz</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+          School Information <span>▾</span>
+        </button>
+
+        <div class="dropdown-menu">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <section class="quiz-page" aria-labelledby="quiz-title">
+    <h1 id="quiz-title">Test Your Knowledge</h1>
+    <p>Select a subject to begin your quiz.</p>
+
+    <div class="quiz-controls">
+    <label for="subject">Choose a subject</label>
+    <select id="subject" name="subject">
+        <option value="">Choose a subject</option>
+        <option value="mathematics">Mathematics</option>
+        <option value="english">English</option>
+        <option value="science">Science</option>
+        <option value="socialStudies">Social Studies</option>
+    </select>
+    <button id="start-quiz" type="button">Start Quiz</button>
+    </div>
+    <div id="quizArea" aria-live="polite"></div>
+    </section>
+  </main>
+</body>
+</html>
